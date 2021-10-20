@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="700.0" prefWidth="1200.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="WIDE.controllers.IDEController">
+   <left>
+      <TreeView fx:id="treeView" prefHeight="414.0" prefWidth="299.0" stylesheets="@style.css" BorderPane.alignment="CENTER" />
+   </left>
+   <top>
+      <MenuBar prefHeight="29.0" prefWidth="1173.0" stylesheets="@style.css" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#openFolderClick" text="Open folder" />
+              <MenuItem mnemonicParsing="false" onAction="#openClick" text="Open..." />
+                  <MenuItem mnemonicParsing="false" onAction="#newClick" text="New" />
+                  <MenuItem mnemonicParsing="false" onAction="#saveClick" text="Save" />
+                  <MenuItem mnemonicParsing="false" onAction="#saveAllClick" text="Save all" />
+                  <MenuItem mnemonicParsing="false" onAction="#runClick" text="Run" />
+                  <MenuItem mnemonicParsing="false" onAction="#exitClick" text="Exit" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#cut" text="Cut" />
+                  <MenuItem mnemonicParsing="false" onAction="#copy" text="Copy" />
+                  <MenuItem mnemonicParsing="false" onAction="#paste" text="Paste" />
+              <MenuItem mnemonicParsing="false" onAction="#delete" text="Delete" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <bottom>
+      <TabPane fx:id="outputPane" onKeyPressed="#syntaxCheck" prefHeight="257.0" prefWidth="1200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+         <tabs>
+            <Tab text="Output">
+               <content>
+                  <TextArea fx:id="outputArea" prefHeight="154.0" prefWidth="988.0" stylesheets="@style.css" />
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </bottom>
+   <center>
+      <TabPane fx:id="tabPane" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>

@@ -1,0 +1,8 @@
+# !/bin/bash
+
+DIR=$(dirname $0)
+
+java -jar ./target/scala-2.13/wacc_16-assembly-0.1.jar $@
+
+
+exit $?
